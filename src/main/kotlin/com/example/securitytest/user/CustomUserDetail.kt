@@ -8,12 +8,12 @@ class CustomUserDetail(
     private val password: String,
 ) : UserDetails {
 
-    override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        TODO("Not yet implemented")
+    override fun getAuthorities(): MutableCollection<out GrantedAuthority>? {
+        return null
     }
 
     override fun getPassword(): String {
-        return password
+        return "{noop}$password"
     }
 
     override fun getUsername(): String {
